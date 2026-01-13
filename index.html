@@ -1148,9 +1148,9 @@
               brand: cols[4]?.trim() || "",
               type: cols[5]?.trim() || "",
               image: cols[7]?.trim() || "",
+              extention: cols[8]?.trim() || "png",
             });
           });
-          console.log("🚀 ~ products:", products);
 
           loadCategories();
           renderProducts(products);
@@ -1254,8 +1254,8 @@
             card.innerHTML = `
             ${
               product.image
-                ? `<img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.style.display='none'">`
-                : `<img src="./images/1.png" alt="${product.name}" class="product-image" onerror="this.style.display='none'">`
+                ? `<img src="./images/${product.image}.${product.extention}" alt="${product.name}" class="product-image" onerror="this.style.display='none'">`
+                : `<img src="./images/${product.image}.${product.extention}" alt="${product.name}" class="product-image" onerror="this.style.display='none'">`
             }
             <span class="product-category" style="display:none">${
               product.category
